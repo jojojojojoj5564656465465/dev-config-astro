@@ -16,3 +16,5 @@ cat $(dirname "$0")/.prettierignore > .prettierignore
 cat $(dirname "$0")/.stylelintignore > .stylelintignore
 cat $(dirname "$0")/.stylelintrc.cjs > .stylelintrc.cjs
 cat $(dirname "$0")/postcss.config.cjs > postcss.config.cjs
+
+echo " fin de l'installation des programmes
