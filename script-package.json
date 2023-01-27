@@ -1,0 +1,17 @@
+
+tmp="$(mktemp)"
+jq '.scripts += {
+  "prettier": "prettier --fix",
+  "eslint": "eslint run --all",
+  "foo": "bar"
+}' package.json > "$tmp" && mv "$tmp" package.json
+
+
+jq '.scripts += input' package.json <(cat << EOF
+{
+  "prettier": "prettier --fix",
+  "eslint": "eslint run --all",
+  "foo": "bar"
+}
+EOF
+)
