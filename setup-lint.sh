@@ -2,7 +2,7 @@
 
 
 ESLINT="eslint @typescript-eslint/parser eslint-plugin-astro eslint-config-prettier @tinkoff/eslint-config"
-STYLELINT="stylelint postcss-html stylelint-config-html @tinkoff/stylelint-config stylelint-config-standard-scss stylelint-scss stylelint-csstree-validator "
+STYLELINT="rome stylelint postcss-html stylelint-config-html @tinkoff/stylelint-config stylelint-config-standard-scss stylelint-scss stylelint-csstree-validator "
 POSTCSS="sass postcss-import postcss-scss postcss-font-magician @fullhuman/postcss-purgecss postcss-preset-env postcss postcss-cli"
 PRETTIER="prettier prettier-plugin-astro @tinkoff/prettier-config"
 DEMO="stylelint-config-prettier container-query-polyfill stylelint-order"
