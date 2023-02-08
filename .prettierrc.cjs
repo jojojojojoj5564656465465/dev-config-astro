@@ -1,3 +1,6 @@
+
+
+/** @type {import("prettier").Config} */
 module.exports = {
   plugins: [require('@tinkoff/prettier-config'),require.resolve('prettier-plugin-astro')],
   overrides: [

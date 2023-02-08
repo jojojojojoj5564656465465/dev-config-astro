@@ -6,8 +6,9 @@ STYLELINT="rome stylelint postcss-html stylelint-config-html @tinkoff/stylelint-
 POSTCSS="sass postcss-import postcss-scss postcss-font-magician @fullhuman/postcss-purgecss postcss-preset-env postcss postcss-cli"
 PRETTIER="prettier prettier-plugin-astro @tinkoff/prettier-config"
 DEMO="stylelint-config-prettier container-query-polyfill stylelint-order"
+UNOCSS="@unocss/eslint-config "
 
-eval "pnpm add -D $ESLINT $STYLELINT $POSTCSS $PRETTIER $DEMO"
+eval "pnpm add -D $ESLINT $STYLELINT $POSTCSS $PRETTIER $DEMO $UNOCSS"
 echo "installation des dev stylelint"
 
 cat $(dirname "$0")/eslintrc.json > eslintrc.json
