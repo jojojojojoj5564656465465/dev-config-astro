@@ -1,0 +1,14 @@
+  "wireit": {
+    "start": {
+      "command": "astro dev"
+    },
+    "build": {
+      "command": "astro build"
+    },
+    "preview": {
+      "command": "astro preview",
+      "dependencies": [
+        "build"
+      ]
+    }
+  },

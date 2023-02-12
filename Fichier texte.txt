@@ -1,0 +1,16 @@
+"wireit": {
+     "astro": {
+      "command": " astro",
+      "packageLocks": ["pnpm-lock.yaml"]
+      },
+    "dev": {
+      "command": "dev",
+      "service":true,
+      "files": [
+        "./*{.ts,.json,.cjs}",
+        "/package.json"
+      ],
+      "dependencies": ["astro"],
+      "env": {}
+    }
+  }, 
