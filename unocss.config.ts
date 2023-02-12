@@ -47,7 +47,7 @@ export default defineConfig({
 
   rules: [
     [
-      /^flex-(row|col)-(\d)$/,
+      /^flex-(row|col)-([1-9])$/,
       ([, direction, number]) => {
         function dd(d: 'row' | 'col'): string {
           if (d === 'row') {
@@ -57,7 +57,8 @@ export default defineConfig({
           }
         }
         function area(n: number): string[] {
-          let position: string[]
+          type positionProps = 'start' | 'center' | 'end'| ''
+          let position: [positionProps, positionProps]
           switch (n) {
             case 1:
               position = ['start', 'start']
@@ -72,7 +73,7 @@ export default defineConfig({
               position = ['start', 'center']
               break
             case 5:
-              position = ['center', 'center']
+              position = ['center','center']
               break
             case 6:
               position = ['end', 'center']
@@ -88,7 +89,7 @@ export default defineConfig({
               break
 
             default:
-              position = []
+              position = ['','']
               break
           }
           return position
@@ -104,6 +105,8 @@ export default defineConfig({
         }
       },
     ],
+
+
     [
       /^family-([a-zA-Z]*)$/,
       ([, c]) => {
