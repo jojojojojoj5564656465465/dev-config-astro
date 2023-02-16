@@ -6,7 +6,7 @@ import {
   presetWebFonts,
   presetWind,
   transformerDirectives,
-  transformerVariantGroup,
+  transformerVariantGroup
 } from 'unocss'
 
 export default defineConfig({
@@ -21,16 +21,16 @@ export default defineConfig({
 
       extraProperties: {
         display: 'inline-block',
-        'vertical-align': 'middle',
-      },
+        'vertical-align': 'middle'
+      }
     }),
     presetWebFonts({
       fonts: {
         sans: 'DM Sans',
         serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
-    }),
+        mono: 'DM Mono'
+      }
+    })
   ],
 
   exclude: [
@@ -42,7 +42,7 @@ export default defineConfig({
     'public',
     'build',
     'mock',
-    './stats.html',
+    './stats.html'
   ],
 
   rules: [
@@ -57,7 +57,7 @@ export default defineConfig({
           }
         }
         function area(n: number): string[] {
-          type positionProps = 'start' | 'center' | 'end'| ''
+          type positionProps = 'start' | 'center' | 'end' | ''
           let position: [positionProps, positionProps]
           switch (n) {
             case 1:
@@ -73,7 +73,7 @@ export default defineConfig({
               position = ['start', 'center']
               break
             case 5:
-              position = ['center','center']
+              position = ['center', 'center']
               break
             case 6:
               position = ['end', 'center']
@@ -89,7 +89,7 @@ export default defineConfig({
               break
 
             default:
-              position = ['','']
+              position = ['', '']
               break
           }
           return position
@@ -101,19 +101,18 @@ export default defineConfig({
           display: 'flex',
           'flex-direction': direction2,
           'justify-content': number2[0],
-          'align-items': number2[1],
+          'align-items': number2[1]
         }
-      },
+      }
     ],
-
 
     [
       /^family-([a-zA-Z]*)$/,
       ([, c]) => {
         return {
-          'font-family': `${c}, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+          'font-family': `${c}, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
         }
-      },
+      }
     ],
     [
       /^p-(\w+)-(\w+)?-?(\w+)?-?(\w+)?$/,
@@ -121,12 +120,12 @@ export default defineConfig({
         const effectiveArr = [t, r, b, l].filter((e) => e)
         const numReg = /^((?![A-Za-z]).)*$/
         const paddingList = effectiveArr.map((e) =>
-          numReg.test(e) ? `${e}%` : e,
+          numReg.test(e) ? `${e}%` : e
         )
         return effectiveArr.length === 0
           ? { padding: '0px' }
           : { padding: paddingList.join(' ') }
-      },
+      }
     ],
     [
       /^m-(\w+)-(\w+)?-?(\w+)?-?(\w+)?$/,
@@ -134,18 +133,18 @@ export default defineConfig({
         const effectiveArr = [t, r, b, l].filter((e) => e)
         const numReg = /^((?![A-Za-z]).)*$/
         const marginList = effectiveArr.map((e) =>
-          numReg.test(e) ? `${e}%` : e,
+          numReg.test(e) ? `${e}%` : e
         )
         return effectiveArr.length === 0
           ? { margin: '0px' }
           : { margin: marginList.join(' ') }
-      },
+      }
     ],
-    ['cursor-p', { cursor: 'pointer' }],
+    ['cursor-p', { cursor: 'pointer' }]
   ],
   shortcuts: [
     {
-      btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+      btn: 'py-2 px-4 font-semibold rounded-lg shadow-md'
     },
 
     [
@@ -153,39 +152,36 @@ export default defineConfig({
       ([, c, d]) => {
         let e = (parseInt(d) + 200).toString()
         return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg`
-      },
+      }
     ],
     [
       /^btn-(.*)$/,
       ([, c]) =>
-        `bg-${c}-400 hover:bg-${c}-700 text-${c}-50 font-semibold py-2 px-4 rounded-lg`,
+        `bg-${c}-400 hover:bg-${c}-700 text-${c}-50 font-semibold py-2 px-4 rounded-lg`
     ],
     {
       container:
-        'relative px-1 m-1 md:px-[calc(50%-(71rem/5))] box-border mx-auto overflow-hidden bg-red-700',
+        'relative px-1 m-1 md:px-[calc(50%-(71rem/2))] box-border mx-auto overflow-hidden'
     },
     {
-      cor: 'bg-green-100 mx-[calc(50%_-_(1000px_/_2))]',
+      'flex-center': 'items-center justify-center'
     },
     {
-      'flex-center': 'items-center justify-center',
+      'absolute-center': '-translate-1/2 left-1/2 top-1/2'
     },
-    {
-      'absolute-center': '-translate-1/2 left-1/2 top-1/2',
-    },
-    [/^size-(.*)$/, ([, s]) => `h-${s} w-${s}`],
+    [/^size-(.*)$/, ([, s]) => `h-${s} w-${s}`]
   ],
   theme: {
     colors: {
       primary: {
         dark: 'red-400',
-        light: 'red-600',
-      },
+        light: 'red-600'
+      }
     },
     fontFamily: {
       sans: 'Montserrat Alternates',
       script: 'Indie Flower',
-      mono: 'Mononoki',
+      mono: 'Mononoki'
     },
     fontSize: {
       xs: ['clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem)', '1'],
@@ -198,7 +194,7 @@ export default defineConfig({
       '3xl': ['clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem)', '1'],
       '4xl': ['clamp(3.36rem, calc(2.87rem + 2.45vw), 4.77rem)', '1'],
       '5xl': ['clamp(4.03rem, calc(3.36rem + 3.36vw), 5.96rem)', '1'],
-      '6xl': ['clamp(4.84rem, calc(3.93rem + 4.54vw), 7.45rem)', '1'],
+      '6xl': ['clamp(4.84rem, calc(3.93rem + 4.54vw), 7.45rem)', '1']
     },
     container: {
       center: true,
@@ -207,8 +203,8 @@ export default defineConfig({
         sm: '2rem',
         lg: '4rem',
         xl: '5rem',
-        '2xl': '6rem',
-      },
+        '2xl': '6rem'
+      }
     },
     breakpoints: {
       xs: '280px',
@@ -216,9 +212,9 @@ export default defineConfig({
       md: '720px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1680px',
-    },
+      '2xl': '1680px'
+    }
   },
 
-  safelist: 'prose prose-sm m-auto text-left'.split(' '),
+  safelist: 'prose prose-sm m-auto text-left'.split(' ')
 })

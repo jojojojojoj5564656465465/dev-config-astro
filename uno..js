@@ -15,7 +15,7 @@ export default defineConfig({
 					display: "inline-block",
 					"z-index": 5,
 					"background-image":
-						"linear-gradient(var(--c-prose-accent), var(--c-prose-accent))",
+					"linear-gradient(var(--c-prose-accent), var(--c-prose-accent))",
 					"background-size": "0 2px",
 					"background-repeat": "no-repeat",
 					"background-position": "bottom left",

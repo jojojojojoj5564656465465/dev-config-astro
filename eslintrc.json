@@ -9,7 +9,7 @@
     "@tinkoff/eslint-config/app",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-     "@unocss"
+    "@unocss"
   ],
   "overrides": [
     {

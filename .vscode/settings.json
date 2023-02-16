@@ -7,7 +7,46 @@
     "source.fixAll.format": true
   },
   "stylelint.validate": [
-    
+    "css", "scss",
       "markdown"
-  ]
+  ],
+   "emmet.includeLanguages": {
+        "postcss": "css"
+    },
+    "postcss.validate": false,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+  "[markdown]": {
+  "editor.defaultFormatter": "trunk.io"
+}
+}
+--------------
+
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.format": true
+  },
+  "stylelint.validate": ["markdown"],
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "postcss.validate": true,
+  "css.validate": false,
+  "linter.linters": {
+    "css": {
+      "enabled": true
+    },
+
+    "[json]": {
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[astro]": {
+      "editor.defaultFormatter": "trunk.io"
+    }
+  }
 }

@@ -3,7 +3,8 @@
   "linter": {
     "enabled": true,
     "ignore": [
-      "dist"
+      "dist",
+       "./node_modules/**",
     ],
     "rules": {
       "recommended": true,

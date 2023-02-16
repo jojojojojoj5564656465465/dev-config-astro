@@ -1,15 +1,17 @@
-
-
 /** @type {import("prettier").Config} */
 module.exports = {
-  plugins: [require('@tinkoff/prettier-config'),require.resolve('prettier-plugin-astro')],
+  "extends": [],
+  plugins: [
+
+    require.resolve('prettier-plugin-astro')
+  ],
   overrides: [
     {
       files: '*.astro',
       options: {
-        parser: 'astro',
-      },
-    },
+        parser: 'astro'
+      }
+    }
   ],
 
   endOfLine: 'lf',
@@ -17,4 +19,4 @@ module.exports = {
   singleQuote: true,
   semi: false,
   trailingComma: 'none'
-};
+}
