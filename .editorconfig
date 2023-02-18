@@ -15,3 +15,12 @@ indent_size = 2
 [*.{md,css,yml}]
 indent_style = space
 indent_size = 2
+
+[*.{css, scss, sass}]
+syntax = postcss, scss, sass, css
+file_type = postcss, scss, sass, css
+
+[*.{html,astro}]
+indent_size = 4
+max_line_length = 120
+insert_final_newline = false
