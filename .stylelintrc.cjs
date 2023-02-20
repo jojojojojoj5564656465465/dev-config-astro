@@ -29,7 +29,6 @@ module.exports = {
 		"declaration-property-value-no-unknown": true,
 		"no-duplicate-selectors": true,
 		"color-no-hex": true,
-		"max-empty-lines": 2,
 		"no-descending-specificity": true,
 		"no-duplicate-selectors": true,
 		"selector-pseudo-class-no-unknown": [

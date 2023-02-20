@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ESLINT="rome eslint @typescript-eslint/parser eslint-plugin-astro "
+ESLINT="eslint @typescript-eslint/parser eslint-plugin-astro @typescript-eslint/eslint-plugin prettier-eslint eslint-plugin-prettier eslint-config-prettier"
 STYLELINT="stylelint stylelint-config-html stylelint-config-recommended"
 POSTCSS="postcss-html postcss-scss postcss-font-magician postcss-preset-env postcss postcss-syntax"
 # TINKOFF="@tinkoff/eslint-config @tinkoff/stylelint-config @tinkoff/prettier-config"
@@ -28,17 +28,17 @@ for package in $NONDEV; do
 done
 
 
-cp "$(dirname "$0")"/{eslintrc.json,.prettierrc.cjs,.prettierignore,.stylelintignore,.stylelintrc.cjs,postcss.config.cjs,shims.d.ts,unocss.config.ts,rome.json,astro.config.mjs,wireit.txt,.editorconfig} .
+cp "$(dirname "$0")"/{.eslintrc.json,.prettierrc.cjs,.prettierignore,.stylelintignore,.stylelintrc.cjs,postcss.config.cjs,shims.d.ts,unocss.config.ts,astro.config.mjs,wireit.txt,.editorconfig} .
 
 echo .wireit >> .gitignore
 
 
-npx stylelint "**/*.{css,js,astro}" --fix
+nix stylelint "**/*.{css,js,astro}" --fix
 code .
 nr dev --open
 
 
 
 
-# stylelint-config-recommended postcss-selector-parser stylelint-prettier
+# stylelint-config-recommended postcss-selector-parser stylelint-prettier prettier-eslint rome
 

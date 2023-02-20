@@ -95,13 +95,14 @@ export default defineConfig({
           return position
         }
 
-        let direction2 = dd(direction as 'row' | 'col')
-        let number2 = area(Number(number))
+        const direction2 = dd(direction as 'row' | 'col')
+        const number2 = area(Number(number))
+        const [justify, align] = number2
         return {
           display: 'flex',
           'flex-direction': direction2,
-          'justify-content': number2[0],
-          'align-items': number2[1]
+          'justify-content': justify,
+          'align-items': align,
         }
       }
     ],
@@ -150,7 +151,7 @@ export default defineConfig({
     [
       /^btn-(.*)-(\d+)$/,
       ([, c, d]) => {
-        let e = (parseInt(d) + 200).toString()
+        const e = (parseInt(d) + 200).toString()
         return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg`
       }
     ],

@@ -1,5 +1,4 @@
- "scripts": {
-    "dev": "astro dev",
+  "scripts": {
     "start": "wireit",
     "build": "wireit",
     "preview": "wireit",
@@ -23,7 +22,10 @@
       ]
     },
     "check-eslint": {
-      "command": "eslint . --ext ts --ext tsx --ext js"
+      "command": "eslint . --ext ts --ext tsx --ext js --fix"
+    },
+    "lint:scss": {
+      "command": "stylelint --fix \"src/**/*.{astro,scss,css}\""
     },
     "prettier:check": {
       "command": "prettier --cache --check --plugin-search-dir=. ."

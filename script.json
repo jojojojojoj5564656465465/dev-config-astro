@@ -4,9 +4,6 @@
     "prepare": "husky install",
     "lint:scss": "stylelint --fix \"src/**/*.{astro,scss,css}\"",
     "prettier:check": "prettier --cache --check --plugin-search-dir=. .",
-    "format": "prettier --ignore-path .prettierignore --config .prettierrc.cjs --cache --write .",
-    "e2e:all": "playwright test",
-    "e2e:chromium": "playwright test --project=chromium",
     "pre-commit": "lint-staged"
 
 
