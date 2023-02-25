@@ -11,8 +11,12 @@ import robotsTxt from 'astro-robots-txt'
 // https://astro.build/config
 import compress from 'astro-compress'
 
-// https://astro.build/config
+// MULTILIGUAL TOOL FOR ASTRO
+//import astroI18next from 'astro-i18next'
 
+
+// import svelte from '@astrojs/svelte'
+// import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +28,11 @@ export default defineConfig({
     sitemap(),
     compress(),
     robotsTxt(),
+//	mdx({
+    //  extendMarkdownConfig: false,
+     // smartypants: true,
+    //  gfm: true,
+    //}),
 
   ]
 })
