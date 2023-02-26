@@ -9,6 +9,7 @@ import {
 	transformerVariantGroup,
 } from "unocss";
 
+
 export default defineConfig({
 	//extractors: [extractorSvelte],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
@@ -25,10 +26,19 @@ export default defineConfig({
 			},
 		}),
 		presetWebFonts({
+			provider: "google",
 			fonts: {
-				sans: "DM Sans",
-				serif: "DM Serif Display",
-				mono: "DM Mono",
+				manrope: "Manrope",
+				sans: "Source Sans Pro",
+				mono: ["Fira Code", "Fira Mono:400,700"],
+				Playfair: "Playfair Display",
+				jakarta: [
+					{
+						name: "Plus Jakarta Sans",
+						weights: ["500", "800"],
+						italic: true,
+					},
+				],
 			},
 		}),
 	],
@@ -127,14 +137,14 @@ export default defineConfig({
 	],
 	shortcuts: [
 		{
-			btn: "py-2 px-4 font-semibold rounded-lg shadow-md",
+			btn: "inline py-1 px-2 m-0.25 font-semibold rounded-lg shadow-md border-1 pointer md:(py-2 px-4 border-2)",
 		},
 
 		[
 			/^btn-(.*)-(\d+)$/,
 			([, c, d]) => {
 				const e = (parseInt(d) + 200).toString();
-				return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg`;
+				return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg cursor-p`;
 			},
 		],
 		[
@@ -142,12 +152,10 @@ export default defineConfig({
 			([, c]) =>
 				`bg-${c}-400 hover:bg-${c}-700 text-${c}-50 font-semibold py-2 px-4 rounded-lg`,
 		],
+
 		{
 			container:
 				"relative px-1 m-1 md:px-[calc(50%-(71rem/2))] box-border mx-auto overflow-hidden",
-		},
-		{
-			"flex-center": "items-center justify-center",
 		},
 		{
 			"absolute-center": "-translate-1/2 left-1/2 top-1/2",

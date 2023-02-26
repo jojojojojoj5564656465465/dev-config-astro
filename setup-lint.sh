@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ESLINT="eslint @typescript-eslint/parser eslint-plugin-astro @typescript-eslint/eslint-plugin prettier-eslint eslint-plugin-prettier eslint-config-prettier"
+ESLINT="eslint @typescript-eslint/parser eslint-plugin-astro @typescript-eslint/eslint-plugin prettier-eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-prettier"
 STYLELINT="stylelint stylelint-config-html stylelint-config-recommended"
 POSTCSS="postcss-html postcss-scss postcss-font-magician postcss-preset-env postcss postcss-syntax"
 # TINKOFF="@tinkoff/eslint-config @tinkoff/stylelint-config @tinkoff/prettier-config"
