@@ -9,7 +9,6 @@ import {
 	transformerVariantGroup,
 } from "unocss";
 
-
 export default defineConfig({
 	//extractors: [extractorSvelte],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
@@ -133,29 +132,24 @@ export default defineConfig({
 					: { margin: marginList.join(" ") };
 			},
 		],
-		["cursor-p", { cursor: "pointer" }],
+
 	],
 	shortcuts: [
 		{
-			btn: "inline py-1 px-2 m-0.25 font-semibold rounded-lg shadow-md border-1 pointer md:(py-2 px-4 border-2)",
+			btn: "inline py-1 px-2 m-0.25 font-semibold rounded-lg shadow-md border-1 cursor-pointer md:(py-2 px-4 border-2)",
 		},
 
 		[
 			/^btn-(.*)-(\d+)$/,
 			([, c, d]) => {
 				const e = (parseInt(d) + 200).toString();
-				return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg cursor-p`;
+				return `bg-${c}-${d} hover:bg-${c}-${e} text-${c}-50 font-semibold py-2 px-4 rounded-lg `;
 			},
-		],
-		[
-			/^btn-(.*)$/,
-			([, c]) =>
-				`bg-${c}-400 hover:bg-${c}-700 text-${c}-50 font-semibold py-2 px-4 rounded-lg`,
 		],
 
 		{
 			container:
-				"relative px-1 m-1 md:px-[calc(50%-(71rem/2))] box-border mx-auto overflow-hidden",
+				"px-1 bg-purple-200 relative 2xl:px-[calc(50%-(81rem/2))] xl:(px-[calc(50%-(71rem/2))] mx-auto) box-border",
 		},
 		{
 			"absolute-center": "-translate-1/2 left-1/2 top-1/2",
@@ -204,6 +198,11 @@ export default defineConfig({
 			lg: "1024px",
 			xl: "1280px",
 			"2xl": "1680px",
+		},
+		aspectRatio: {
+			"4/3": "4 / 3",
+			"1/3": "1 / 3",
+			"1/2": "1 / 2",
 		},
 	},
 
